@@ -28,6 +28,7 @@ def return_all():
 
 
 @app.route("/api/wines", methods=["GET"])
+# e.g. http://ngl04.pythonanywhere.com/api/wines?id=3
 def get_wine_by_id():
     if "id" in request.args:
         id = int(request.args["id"])
@@ -39,6 +40,7 @@ def get_wine_by_id():
 
 
 @app.route("/api/wines/filter", methods=["GET"])
+# e.g. http://ngl04.pythonanywhere.com/api/wines/filter?quality=3
 def filter_wines():
     requested_quality = request.args.get("quality")
     if requested_quality:
